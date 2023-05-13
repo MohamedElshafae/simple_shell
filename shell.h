@@ -26,10 +26,7 @@ char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *str);
-<<<<<<< HEAD
 int _strncmp(char *s1, char *s2, int count);
-=======
 int _strcmp(char *s1, char *s2);
 int _atoi(char *str);
->>>>>>> getFun
 #endif

@@ -76,7 +76,6 @@ char *_strdup(char *str)
 	ptr[i] = '\0';
 	return (ptr);
 }
-<<<<<<< HEAD
 
 /**
  * _strcmp - compare with two string
@@ -90,7 +89,12 @@ int _strncmp(char *s1, char *s2, int count)
 	int i;
 
 	for (i = 0; i < count; i++)
-=======
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	}
+	return (0);
+}
 /**
  * _strcmp - Compare two strings.
  * @s1: first string
@@ -102,14 +106,10 @@ int _strcmp(char *s1, char *s2)
 	int i;
 
 	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
->>>>>>> getFun
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> getFun
 	return (0);
 }
