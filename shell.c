@@ -19,6 +19,5 @@ int main(int argc, char **argv, char **env)
 		getline(&line, &buf_size, stdin);
 		array_command = get_array_command(line, " ");
 		fork_execute(array_command, env);
-
 	}
 }

@@ -22,10 +22,10 @@ char **get_array_command(char *line, char *del)
 	array_command = malloc(sizeof(char *) * counter);
 	if (!array_command)
 		return (NULL);
-	l = malloc(strlen(line) + 1);
+	l = malloc(_strlen(line) + 1);
 	if (!l)
 		return (NULL);
-	l = strdup(line);
+	l = _strdup(line);
 
 	token = strtok(l, del);
 	idx = 0;
@@ -46,6 +46,6 @@ char **get_array_command(char *line, char *del)
  */
 void remove_newline(char *str)
 {
-	int len = strlen(str);
+	int len = _strlen(str);
 	str[len - 1] = '\0';
 }

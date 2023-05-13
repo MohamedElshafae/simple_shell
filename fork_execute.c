@@ -17,10 +17,10 @@ int fork_execute(char **command_array, char **env)
 	{
 		if (i != 0)
 		{
-			catpath = malloc(strlen(array_path[i]) + strlen(command_array[0]) + 1);
-			strcpy(catpath, array_path[i]);
-			strcat(catpath, "/");
-			strcat(catpath, command_array[0]);
+			catpath = malloc(_strlen(array_path[i]) + _strlen(command_array[0]) + 1);
+			_strcpy(catpath, array_path[i]);
+			_strcat(catpath, "/");
+			_strcat(catpath, command_array[0]);
 		}
 
 		if (access(catpath, X_OK) == 0)
