@@ -17,8 +17,8 @@ int main(int argc, char **argv, char **env)
 	{
 		write(STDOUT_FILENO, ">_<$ ", 5);
 		getline(&line, &buf_size, stdin);
-		array_command = get_array_command(line);
-		fork_excute(array_command);
+		array_command = get_array_command(line, " ");
+		fork_execute(array_command, env);
 
 	}
 }
