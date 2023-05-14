@@ -1,21 +1,6 @@
 #include "shell.h"
 
 /**
- * _strlen -  calculate length of string
- * @str:string var
- * Return: length of string
- */
-int _strlen(char *str)
-{
-	int len = 0;
-
-	while (str[len] != '\0')
-		len++;
-
-	return (len);
-}
-
-/**
  * _strcpy -  copies the string pointed to by src,
  * @dest: pointer.
  * @src:copy str.

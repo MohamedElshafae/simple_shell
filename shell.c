@@ -27,9 +27,10 @@ int main(int argc, char **argv, char **env)
 			break;
 		}
 		array_command = get_array_command(line, " ");
-		func = get_fun(array_command[0]);
-		if (func != NULL)
-			func(env, _atoi(array_command[1]));
+		/*func = get_fun(array_command[0]);*/
+		if (array_command[0] == "printenv")
+			print_env(env, 0);
+		/*get_fun(env, _atoi(array_command[1]));*/
 		else
 			fork_execute(array_command, env);
 	}

@@ -7,6 +7,9 @@ void _hexit(char **env, int statue)
 }
 void print_env(char **env, int statue)
 {
+	int i;
+
+	for (i = 0; env[i]; i++)
+	       printf("%s\n", env[i]);	
 	(void)statue;
-	printf("env\n");
 }
