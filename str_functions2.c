@@ -10,7 +10,7 @@ int _atoi(char *str)
 	int i, num;
 	int len = _strlen(str);
 
-	if (str[i] >= '0' && str[i] <= '9')
+	if (str[0] >= '0' && str[0] <= '9')
 		num = str[0] - '0';
 	else
 		return (0);
