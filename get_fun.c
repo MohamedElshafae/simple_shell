@@ -10,7 +10,7 @@ void (*get_fun(char *str))()
 {
 	int i;
 	fun_t fun[] = {
-		{"printenv", print_env},{"exit", _hexit},
+		{"printenv", print_env}, {"exit", _hexit},
 		{NULL, NULL}
 	};
 

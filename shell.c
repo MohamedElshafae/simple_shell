@@ -1,8 +1,8 @@
 #include "shell.h"
 
-void handle_signal();
+void handle_signal(int sig);
 /**
- * main:...
+ * main - ...
  * @argc: number of arguments
  * @argv: array of arguments
  * @env: enviroment
@@ -43,6 +43,10 @@ int main(int argc, char **argv, char **env)
 		}
 	}
 }
+/**
+ * handle_signal - handle ctrl + c
+ * @sig: signal to handle
+ */
 void handle_signal(int sig)
 {
 	if (sig == SIGINT)

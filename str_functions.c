@@ -63,7 +63,7 @@ char *_strdup(char *str)
 }
 
 /**
- * _strcmp - compare with two string
+ * _strncmp - compare with two string
  * @s1: string 1
  * @s2: string 2
  * @count:the number of compare string

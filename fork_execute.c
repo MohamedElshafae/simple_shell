@@ -1,8 +1,9 @@
 #include "shell.h"
 
 /**
- * fork_excute - make a fork and excute a command
+ * fork_execute - make a fork and excute a command
  * @command_array: command array that will be excuted
+ * @env: enviroment variable
  * Return: 0 on success and 1 in fail
  */
 int fork_execute(char **command_array, char **env)

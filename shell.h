@@ -9,6 +9,11 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+/**
+ * struct builtins - struct to map each builtin command to a fun
+ * @cmd: the command
+ * @funptr: ptr to the function
+ */
 typedef struct builtins
 {
 	char *cmd;

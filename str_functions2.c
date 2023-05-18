@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * atoi - convert string to int
+ * _atoi - convert string to int
  * @str: string
  * Return: intger converted from string
  */
