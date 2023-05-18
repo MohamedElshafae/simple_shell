@@ -8,7 +8,7 @@
 int fork_execute(char **command_array, char **env)
 {
 	pid_t id;
-	int statue, i = 0;
+	int statue, access_id, i = 0;
 	char *path = get_path(env);
 	char **array_path = get_array_command(path, ":");
 	char *catpath = command_array[0];
@@ -22,8 +22,8 @@ int fork_execute(char **command_array, char **env)
 			_strcat(catpath, "/");
 			_strcat(catpath, command_array[0]);
 		}
-
-		if (access(catpath, X_OK) == 0)
+		access_id = access(catpath, X_OK);
+		if (access_id == 0)
 		{
 			id = fork();
 			if (id == 0)
@@ -40,6 +40,9 @@ int fork_execute(char **command_array, char **env)
 		}
 		i++;
 	}
+	if (access_id != 0)
+		perror("ERROR");
+
 	free(catpath);
 	free(array_path);
 	free(command_array);

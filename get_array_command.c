@@ -47,5 +47,6 @@ char **get_array_command(char *line, char *del)
 void remove_newline(char *str)
 {
 	int len = _strlen(str);
-	str[len - 1] = '\0';
+	if (str[len - 1] == '\n')
+		str[len - 1] = '\0';
 }
