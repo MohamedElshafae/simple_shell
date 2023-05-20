@@ -29,6 +29,8 @@ int main(int argc, char **argv, char **env)
 			write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
+		if (_strcmp(line, "\n") == 0)
+			continue;
 		array_lines = get_array_command(line, ";");
 		while (array_lines[j])
 		{
