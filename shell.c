@@ -38,7 +38,13 @@ int main(int argc, char **argv, char **env)
 			func = get_fun(array_command[0]);
 			statue = array_command[1] ? _atoi(array_command[1]) : 0;
 			if (func != NULL)
-				func(env, statue);
+			{
+				arg_t args;
+				args.env = env;
+				args.statue = statue;
+				args.array_command = array_command;
+				func(args);
+			}
 			else
 				fork_execute(array_command, env);
 			j++;

@@ -4,21 +4,19 @@
  * @env: enviroment var
  * @statue: statue number
  */
-void _hexit(char **env, int statue)
+void _hexit(arg_t args)
 {
-	(void)env;
-	exit(statue);
+	exit(args.statue);
 }
 /**
  * print_env - print the enviroment var
  * @env: enviroment var
  * @statue: ...
  */
-void print_env(char **env, int statue)
+void print_env(arg_t args)
 {
 	int i;
 
-	for (i = 0; env[i]; i++)
-		printf("%s\n", env[i]);
-	(void)statue;
+	for (i = 0; args.env[i]; i++)
+		printf("%s\n", args.env[i]);
 }

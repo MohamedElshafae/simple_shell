@@ -11,7 +11,7 @@ void (*get_fun(char *str))()
 	int i;
 	fun_t fun[] = {
 		{"printenv", print_env}, {"exit", _hexit},
-		{NULL, NULL}
+		{"echo", handle_echo}, {NULL, NULL}
 	};
 
 	i = 0;
@@ -22,5 +22,4 @@ void (*get_fun(char *str))()
 		i++;
 	}
 	return (NULL);
-
 }
