@@ -14,19 +14,31 @@ int main(int argc, char **argv, char **env)
 	size_t buf_size = 0;
 	char **array_command = NULL;
 	void (*func)();
-	int j, flag = 1;
+	int j, flag = 1, fd = 0, inter_flag = 0;
 	int statue;
 	char **array_lines = NULL;
+
+	if (argc == 2)
+	{
+		fd = open(argv[1], O_RDONLY);
+		if (fd == -1)
+			perror(argv[0]);
+	}
 
 	signal(SIGINT, handle_signal);
 	while (flag)
 	{
 		j = 0;
-		write(STDOUT_FILENO, ">_<$ ", 5);
-		flag = getline(&line, &buf_size, stdin);
+		if (isatty(fd))
+		{
+			write(STDOUT_FILENO, ">_<$ ", 5);
+			inter_flag = 1;
+		}
+		flag = _getline(&line, &buf_size, fd);
 		if (flag == EOF)
 		{
-			write(STDOUT_FILENO, "\n", 1);
+			if (fd == 0 && inter_flag)
+				write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
 		if (_strcmp(line, "\n") == 0)
@@ -50,6 +62,7 @@ int main(int argc, char **argv, char **env)
 			j++;
 		}
 	}
+	return (0);
 }
 /**
  * handle_signal - handle ctrl + c

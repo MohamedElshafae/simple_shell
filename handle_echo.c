@@ -14,7 +14,7 @@ void handle_echo(arg_t args)
 
 	if (line[0] == '\"' || line[0] == '\'')
 	{
-		print_string(line, 1, _strlen(line));
+		print_string(line, 1, (_strlen(line) - 1));
 		return ;
 	}
 	else if (line[0] == '$' && (line[1] >= 'A' && line[1] <= 'Z'))

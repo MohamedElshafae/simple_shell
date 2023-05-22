@@ -1,8 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define BUF_SIZE 1024
+#define BUFSIZE 1024
 
 #include <stdio.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
@@ -40,6 +41,7 @@ void (*get_fun(char *str))();
 void _hexit(arg_t args);
 void print_env(arg_t args);
 void handle_echo(arg_t args);
+ssize_t _getline(char **lineptr, size_t *n, int fd);
 
 char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
