@@ -12,10 +12,7 @@ void handle_echo(arg_t args)
 	char *line = args.array_command[1];
 
 	if (line[0] == '\"' || line[0] == '\'')
-	{
 		print_string(line, 1, (_strlen(line) - 1));
-		return (NULL);
-	}
 	else if (line[0] == '$' && (line[1] >= 'A' && line[1] <= 'Z'))
 	{
 		char *str = _strdup(line);
