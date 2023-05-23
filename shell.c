@@ -34,7 +34,7 @@ int main(int argc, char **argv, char **env)
 			write(STDOUT_FILENO, "$ ", 2);
 			inter_flag = 1;
 		}
-		flag = getline(&line, &buf_size, stdin);
+		flag = _getline(&line, &buf_size, fd);
 		if (flag == EOF)
 		{
 			if (fd == 0 && inter_flag)
