@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **env)
 		j = 0;
 		if (isatty(fd))
 		{
-			write(STDOUT_FILENO, ">_<$ ", 5);
+			write(STDOUT_FILENO, "$ ", 2);
 			inter_flag = 1;
 		}
 		flag = _getline(&line, &buf_size, fd);
