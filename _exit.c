@@ -1,8 +1,7 @@
 #include "shell.h"
 /**
  * _hexit - exit the program with a specific statue
- * @env: enviroment var
- * @statue: statue number
+ * @args: ...
  */
 void _hexit(arg_t args)
 {
@@ -10,8 +9,7 @@ void _hexit(arg_t args)
 }
 /**
  * print_env - print the enviroment var
- * @env: enviroment var
- * @statue: ...
+ * @args: ...
  */
 void print_env(arg_t args)
 {

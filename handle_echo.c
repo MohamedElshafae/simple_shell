@@ -1,12 +1,11 @@
 #include "shell.h"
 
-void print_string(char *str, int start , int len);
+void print_string(char *str, int start, int len);
 void print_line_env(arg_t args, char *str);
 
 /**
  * handle_echo - hande three cases of echo ("", $$, $?)
- * @env: enviroment var
- * @statue: ...
+ * @args: ...
  */
 void handle_echo(arg_t args)
 {
@@ -15,7 +14,7 @@ void handle_echo(arg_t args)
 	if (line[0] == '\"' || line[0] == '\'')
 	{
 		print_string(line, 1, (_strlen(line) - 1));
-		return ;
+		return (NULL);
 	}
 	else if (line[0] == '$' && (line[1] >= 'A' && line[1] <= 'Z'))
 	{
@@ -34,6 +33,7 @@ void handle_echo(arg_t args)
 	{
 		int wstatus;
 		int status_code = WEXITSTATUS(wstatus);
+
 		printf("%d\n", status_code);
 	}
 	else
@@ -44,21 +44,22 @@ void handle_echo(arg_t args)
  * print_string - print string without quots
  * @str: string
  * @start: start print
+ * @len:length
  * Return:void
  */
-void print_string(char *str, int start , int len)
+void print_string(char *str, int start, int len)
 {
 	int i;
 
-	for (i = start ; i < len; i++)
-			putchar(str[i]);
+	for (i = start; i < len; i++)
+		putchar(str[i]);
 	putchar('\n');
 }
 
 /**
  * print_line_env - search in env and print line
- * @str; string
- * args: struct
+ * @str: string
+ * @args: struct
  * Return:void
  */
 void print_line_env(arg_t args, char *str)

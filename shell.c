@@ -52,6 +52,7 @@ int main(int argc, char **argv, char **env)
 			if (func != NULL)
 			{
 				arg_t args;
+
 				args.env = env;
 				args.statue = statue;
 				args.array_command = array_command;
