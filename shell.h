@@ -9,7 +9,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-
+int flag_l_check;
 char *l;
 /**
  * struct builtins - struct to map each builtin command to a fun

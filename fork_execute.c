@@ -42,6 +42,7 @@ int fork_execute(char **command_array, char **env)
 				wait(&statue);
 				free(catpath);
 				free(array_path);
+				free(l);
 				return (0);
 			}
 		}
@@ -49,7 +50,7 @@ int fork_execute(char **command_array, char **env)
 	}
 	if (access_id != 0)
 		perror("ERROR");
-	free(catpath);
-	free_strarr(array_path);
+	free(l);
+	free(array_path);
 	return (1);
 }

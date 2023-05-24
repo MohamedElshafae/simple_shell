@@ -60,14 +60,16 @@ int main(int argc, char **argv, char **env)
 				args.statue = statue;
 				args.array_command = array_command;
 				func(args);
+				
 			}
 			else
 				fork_execute(array_command, env);
 			j++;
 		}
-		free_strarr(array_command);
-		free_strarr(array_lines);
+		free(array_command);
+		free(array_lines);
 		free(line);
+		free(l);
 	}
 	return (0);
 }
