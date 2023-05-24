@@ -1,5 +1,6 @@
 #include "shell.h"
 
+void free_function(char **array_path, char *catpath, char *l);
 /**
  * fork_execute - make a fork and excute a command
  * @command_array: command array that will be excuted
@@ -40,9 +41,7 @@ int fork_execute(char **command_array, char **env)
 			else
 			{
 				wait(&statue);
-				free(catpath);
-				free(array_path);
-				free(l);
+				free_function(array_path, catpath, l);
 				return (0);
 			}
 		}
@@ -53,4 +52,17 @@ int fork_execute(char **command_array, char **env)
 	free(l);
 	free(array_path);
 	return (1);
+}
+
+/**
+ * free_function - free all strings
+ * @array_path:...
+ * @catpath:...
+ * @l:...
+ */
+void free_function(char **array_path, char *catpath, char *l)
+{
+	free(catpath);
+	free(array_path);
+	free(l);
 }

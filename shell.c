@@ -45,7 +45,6 @@ int main(int argc, char **argv, char **env)
 			free(line);
 			continue;
 		}
-		
 		array_lines = get_array_command(line, ";");
 		while (array_lines[j])
 		{

@@ -23,7 +23,6 @@ char **get_array_command(char *line, char *del)
 	if (!array_command)
 		return (NULL);
 	l = _strdup(line);
-	
 	token = strtok(l, del);
 	idx = 0;
 	while (token != NULL)
