@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+char *l;
 /**
  * struct builtins - struct to map each builtin command to a fun
  * @cmd: the command

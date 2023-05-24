@@ -11,7 +11,6 @@ char **get_array_command(char *line, char *del)
 {
 	char **array_command = NULL;
 	char *token;
-	char *l;
 	int idx, counter = 0;
 
 	for (idx = 0; line[idx] != '\0'; idx++)
@@ -24,7 +23,7 @@ char **get_array_command(char *line, char *del)
 	if (!array_command)
 		return (NULL);
 	l = _strdup(line);
-
+	
 	token = strtok(l, del);
 	idx = 0;
 	while (token != NULL)

@@ -68,6 +68,7 @@ int main(int argc, char **argv, char **env)
 		free_strarr(array_command);
 		free_strarr(array_lines);
 		free(line);
+		free(l);
 	}
 	return (0);
 }
