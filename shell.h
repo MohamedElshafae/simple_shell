@@ -42,6 +42,7 @@ void _hexit(arg_t args);
 void print_env(arg_t args);
 void handle_echo(arg_t args);
 ssize_t _getline(char **lineptr, size_t *n, int fd);
+void free_strarr(char **args);
 
 char *_strcat(char *dest, char *src);
 char *_strdup(char *str);

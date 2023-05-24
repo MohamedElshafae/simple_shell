@@ -27,12 +27,13 @@ ssize_t _getline(char **line, size_t *n, int fd)
 	static size_t input;
 	int inp;
 	char *buffer;
-	char ch;
+	char ch = 'm';
 
 	if (input == 0)
 		fflush(STDIN_FILENO);
 	else
 		return (-1);
+	input = 0;
 	buffer = malloc(sizeof(char) * BUFSIZE);
 	if (buffer == 0)
 		return (-1);

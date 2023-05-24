@@ -41,3 +41,12 @@ int _strlen(char *str)
 
 	return (len);
 }
+void free_strarr(char **args)
+{
+    size_t x;
+
+    for (x = 0 ; args[x] != NULL ; x++)
+        free(args[x]);
+
+    free(args);
+}
