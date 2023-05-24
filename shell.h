@@ -9,7 +9,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-int flag_l_check;
+
 char *l;
 /**
  * struct builtins - struct to map each builtin command to a fun
@@ -28,14 +28,11 @@ typedef struct builtins
  * @statue: ...
  * @array_command: ...
  */
-
 typedef struct arguments
 {
 	char **env;
 	int statue;
 	char **array_command;
-	char **array_lines;
-	char *line;
 } arg_t;
 char **get_array_command(char *line, char *del);
 int fork_execute(char **command_array, char **env);

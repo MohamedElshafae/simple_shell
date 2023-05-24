@@ -71,7 +71,8 @@ int main(int argc, char **argv, char **env)
 				fork_execute(array_command, env);
 			j++;
 		}
-		free_strarr(array_command);
+		free(array_command[0]);
+		free(array_command);
 		free_strarr(array_lines);
 		free(line);
 	}
