@@ -35,7 +35,6 @@ char **get_array_command(char *line, char *del)
 
 	remove_newline(array_command[idx - 1]);
 	array_command[idx] = NULL;
-	free(token);
 	return (array_command);
 }
 /**

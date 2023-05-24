@@ -41,12 +41,16 @@ int _strlen(char *str)
 
 	return (len);
 }
+/**
+ * free_strarr - free array of string
+ * @args: array of string
+ */
 void free_strarr(char **args)
 {
-    size_t x;
+	size_t x;
 
-    for (x = 0 ; args[x] != NULL ; x++)
-        free(args[x]);
+	for (x = 0 ; args[x] != NULL ; x++)
+		free(args[x]);
 
-    free(args);
+	free(args);
 }

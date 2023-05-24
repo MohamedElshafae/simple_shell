@@ -18,14 +18,13 @@ int main(int argc, char **argv, char **env)
 	int statue;
 	char **array_lines = NULL;
 
+	signal(SIGINT, handle_signal);
 	if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);
 		if (fd == -1)
 			perror(argv[0]);
 	}
-
-	signal(SIGINT, handle_signal);
 	while (flag)
 	{
 		j = 0;
@@ -42,7 +41,11 @@ int main(int argc, char **argv, char **env)
 			break;
 		}
 		if (_strcmp(line, "\n") == 0)
+		{
+			free(line);
 			continue;
+		}
+		
 		array_lines = get_array_command(line, ";");
 		while (array_lines[j])
 		{
@@ -62,6 +65,7 @@ int main(int argc, char **argv, char **env)
 				fork_execute(array_command, env);
 			j++;
 		}
+		free_strarr(array_command);
 		free_strarr(array_lines);
 		free(line);
 	}
