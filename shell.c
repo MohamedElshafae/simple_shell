@@ -56,6 +56,13 @@ int main(int argc, char **argv, char **env)
 			{
 				arg_t args;
 
+				if (_strcmp(array_command[0], "exit") == 0)
+				{
+					free(array_command[0]);
+					free(array_command);
+					free_strarr(array_lines);
+					free(line);
+				}
 				args.env = env;
 				args.statue = statue;
 				args.array_command = array_command;

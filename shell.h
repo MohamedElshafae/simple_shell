@@ -34,6 +34,8 @@ typedef struct arguments
 	char **env;
 	int statue;
 	char **array_command;
+	char **array_lines;
+	char *line;
 } arg_t;
 char **get_array_command(char *line, char *del);
 int fork_execute(char **command_array, char **env);

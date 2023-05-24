@@ -1,6 +1,0 @@
-ls
-ls
-ls -al
-echo ahmed
-echo "mohamed"
-echo $$
