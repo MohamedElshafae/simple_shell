@@ -49,7 +49,7 @@ ssize_t _getline(char **line, size_t *n, int fd)
 			input++;
 			break;
 		}
-		if (input >= buffer_size)
+		if ((int)input >= buffer_size)
 		{
 			buffer_size *= 2;
 			buffer = realloc(buffer, buffer_size);
