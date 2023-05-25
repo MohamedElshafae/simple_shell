@@ -23,9 +23,8 @@ void calc_size(size_t *n, int input)
  */
 ssize_t _getline(char **line, size_t *n, int fd)
 {
-	int check;
+	int check, inp, buffer_size = BUFSIZE;
 	static size_t input;
-	int inp;
 	char *buffer;
 	char ch = 'm';
 
@@ -50,8 +49,11 @@ ssize_t _getline(char **line, size_t *n, int fd)
 			input++;
 			break;
 		}
-		if (input >= BUFSIZE)
-			buffer = realloc(buffer, input + 1);
+		if (input >= buffer_size)
+		{
+			buffer_size *= 2;
+			buffer = realloc(buffer, buffer_size);
+		}
 		buffer[input++] = ch;
 	}
 	buffer[input] = '\0';

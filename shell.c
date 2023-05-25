@@ -85,6 +85,6 @@ int main(int argc, char **argv, char **env)
 void handle_signal(int sig)
 {
 	if (sig == SIGINT)
-		printf("\n>_<$ ");
+		printf("\n$ ");
 	fflush(stdout);
 }
